@@ -45,20 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState(){
     super.initState();
-    _title = 'Some default value';
+    _title = 'Home';
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(_title, style: TextStyle(color: Colors.black),),
-        elevation: 0,
-        backgroundColor: Colors.white,  
-        iconTheme: IconThemeData(color: Colors.deepOrange),
-      ),
+      resizeToAvoidBottomInset: false,
       drawer: Drawer(
         child: Container(
           child: ListView(
@@ -124,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
      setState(() {
      _selectedPage = index;
       switch(index) { 
-       case 0: { _title = 'Home'; } 
+       case 0: { _title = 'Home'; }
        break; 
        case 1: { _title = 'Volunteer'; } 
        break;

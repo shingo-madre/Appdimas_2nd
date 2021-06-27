@@ -22,6 +22,20 @@ class _MainVolunteerState extends State<MainVolunteer> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: new AppBar(
+          elevation: 0,
+          title: Text(
+              'Volunteer',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontFamily: 'Montserrat'
+              ),
+          ),
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.deepOrange),
+        ),
+        drawer: Drawer(),
         body: DefaultTabController(
           length: 3,
           child: Column(

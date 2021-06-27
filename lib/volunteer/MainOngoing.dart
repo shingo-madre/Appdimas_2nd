@@ -5,8 +5,8 @@ class MainOnGoing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
+    return Scaffold(
+        body: Row(
         children: [
           Expanded(
             child: Padding(
