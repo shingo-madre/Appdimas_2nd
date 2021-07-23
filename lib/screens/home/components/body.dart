@@ -4,12 +4,7 @@ import 'package:gemastik_tryout/components/sidebar.dart';
 import 'package:gemastik_tryout/enums.dart';
 import 'package:gemastik_tryout/screens/home/components/list_event.dart';
 
-import '../../../size_config.dart';
-import 'categories.dart';
-import 'discount_banner.dart';
 import 'home_header.dart';
-import 'popular_product.dart';
-import 'special_offers.dart';
 
 class Body extends StatelessWidget {
   @override

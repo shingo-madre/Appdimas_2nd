@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/components/rounded_icon_btn.dart';
-import 'package:gemastik_tryout/models/Product.dart';
 import 'package:gemastik_tryout/models/Event.dart';
 
 import '../../../constants.dart';

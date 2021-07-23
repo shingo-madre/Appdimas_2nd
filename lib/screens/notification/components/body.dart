@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/screens/notification/components/notification_list.dart';
-import '../../../size_config.dart';
 
 class Body extends StatelessWidget {
   @override

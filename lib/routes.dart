@@ -1,11 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:gemastik_tryout/screens/cart/cart_screen.dart';
 import 'package:gemastik_tryout/screens/complete_profile/complete_profile_screen.dart';
 import 'package:gemastik_tryout/screens/details/details_screen.dart';
 import 'package:gemastik_tryout/screens/forgot_password/forgot_password_screen.dart';
 import 'package:gemastik_tryout/screens/home/home_screen.dart';
-import 'package:gemastik_tryout/screens/login_success/login_success_screen.dart';
-import 'package:gemastik_tryout/screens/otp/otp_screen.dart';
 import 'package:gemastik_tryout/screens/profile/profile_screen.dart';
 import 'package:gemastik_tryout/screens/sign_in/sign_in_screen.dart';
 import 'package:gemastik_tryout/screens/splash/splash_screen.dart';
@@ -14,21 +11,24 @@ import 'package:gemastik_tryout/screens/verification_ktp/verification_ktp_screen
 import 'package:gemastik_tryout/screens/verification_wait/verification_wait_screen.dart';
 import 'package:gemastik_tryout/screens/join_event/join_event_screen.dart';
 import 'package:gemastik_tryout/screens/notification/notification_screen.dart';
+import 'package:gemastik_tryout/screens/volunteer/volunteer_screen.dart';
+import 'package:gemastik_tryout/screens/chats/chats_screen.dart';
+import 'package:gemastik_tryout/screens/messages/message_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
   SignInScreen.routeName: (context) => SignInScreen(),
   ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
-  LoginSuccessScreen.routeName: (context) => LoginSuccessScreen(),
   SignUpScreen.routeName: (context) => SignUpScreen(),
   CompleteProfileScreen.routeName: (context) => CompleteProfileScreen(),
   VerificationKtpScreen.routeName: (context) => VerificationKtpScreen(),
   VerificationWaitScreen.routeName: (context) => VerificationWaitScreen(),
-  OtpScreen.routeName: (context) => OtpScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
   DetailsScreen.routeName: (context) => DetailsScreen(),
-  CartScreen.routeName: (context) => CartScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
   JoinEventScreen.routeName: (context) => JoinEventScreen(),
   NotificationScreen.routeName: (context) => NotificationScreen(),
+  VolunteerScreen.routeName: (context) => VolunteerScreen(),
+  ChatsScreen.routeName: (context) => ChatsScreen(),
+  MessagesScreen.routeName: (context) => MessagesScreen(),
 };

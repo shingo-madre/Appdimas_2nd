@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/screens/home/components/list_event_all.dart';
-import 'package:gemastik_tryout/screens/home/components/popular_product.dart';
-
-import 'discount_banner.dart';
 
 class ListEvent extends StatefulWidget {
   const ListEvent({ Key key }) : super(key: key);
@@ -60,7 +57,6 @@ class _ListEventState extends State<ListEvent> {
                 ListEventAll(),
                 ListEventAll(),
                 ListEventAll(),
-                // PopularProducts(),
               ],
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gemastik_tryout/constants.dart';
 
 class ProfilePic extends StatelessWidget {
   const ProfilePic({
@@ -20,11 +21,11 @@ class ProfilePic extends StatelessWidget {
             backgroundImage: AssetImage("assets/images/Profile Image.png"),
           ),
           Positioned(
-            right: -16,
+            right: -12,
             bottom: 0,
             child: SizedBox(
-              height: 46,
-              width: 46,
+              height: 40,
+              width: 40,
               child: TextButton(
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -33,10 +34,10 @@ class ProfilePic extends StatelessWidget {
                       side: BorderSide(color: Colors.white),
                     ),
                   ),
-                  backgroundColor: MaterialStateProperty.all(Color(0xFFF5F6F9)),
+                  backgroundColor: MaterialStateProperty.all(kPrimaryColor),
                 ),
                 onPressed: () {},
-                child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
+                child: Icon(Icons.edit, color: Colors.white,),
               ),
             ),
           )

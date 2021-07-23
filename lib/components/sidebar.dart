@@ -36,10 +36,6 @@ class Sidebar extends StatelessWidget {
           title: Text('Disimpan', style: TextStyle(color: kSecondaryColor),),
           leading: Icon(Icons.bookmark_border_outlined),
           onTap: () {
-            // Navigator.pop(context);
-            // Navigator.push(context, MaterialPageRoute(builder: (context) {
-            //   return Product('Product');
-            // }));
           },
         ),
         ListTile(

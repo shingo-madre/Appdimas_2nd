@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/components/default_button.dart';
-import 'package:gemastik_tryout/components/form_error.dart';
 import 'package:gemastik_tryout/screens/verification_wait/verification_wait_screen.dart';
 import 'package:image_picker/image_picker.dart';
 

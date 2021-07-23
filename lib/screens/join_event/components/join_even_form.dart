@@ -3,10 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/components/default_button.dart';
 import 'package:gemastik_tryout/screens/join_event/components/verification_join_event.dart';
-import 'package:gemastik_tryout/screens/verification_wait/verification_wait_screen.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../constants.dart';
 import '../../../size_config.dart';
 
 class JoinEventForm extends StatefulWidget {

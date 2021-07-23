@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gemastik_tryout/screens/chats/chats_screen.dart';
 import 'package:gemastik_tryout/screens/home/home_screen.dart';
-import 'package:gemastik_tryout/screens/profile/profile_screen.dart';
+import 'package:gemastik_tryout/screens/volunteer/volunteer_screen.dart';
 
 import '../constants.dart';
 import '../enums.dart';
@@ -46,17 +47,17 @@ class CustomBottomNavBar extends StatelessWidget {
                   color: MenuState.volunteer == selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor),
-              onPressed: () {},
+              onPressed: () => Navigator.pushNamed(context, VolunteerScreen.routeName),
             ),
             IconButton(
               icon: Icon(
                 Icons.chat_rounded,
-                color: MenuState.profile == selectedMenu
+                color: MenuState.chat == selectedMenu
                     ? kPrimaryColor
                     : inActiveIconColor,
               ),
               onPressed: () =>
-                  Navigator.pushNamed(context, ProfileScreen.routeName),
+                  Navigator.pushNamed(context, ChatsScreen.routeName),
             ),
           ],
         )

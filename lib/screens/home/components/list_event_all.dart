@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/components/event_card.dart';
 import 'package:gemastik_tryout/models/Event.dart';
-import 'package:gemastik_tryout/size_config.dart';
 
 class ListEventAll extends StatefulWidget {
   const ListEventAll({Key key}) : super(key: key);
