@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gemastik_tryout/screens/notification/notification_screen.dart';
 // import 'package:gemastik_tryout/screens/cart/cart_screen.dart';
 
 import '../../../size_config.dart';
@@ -23,7 +24,9 @@ class HomeHeader extends StatelessWidget {
           //   press: () => Navigator.pushNamed(context, CartScreen.routeName),
           // ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, NotificationScreen.routeName);
+            },
             child: Image.asset('assets/icons/notification_dot.png'),
           )
           // IconButton(icon: Icon(Icons.alarm), onPressed: () {})

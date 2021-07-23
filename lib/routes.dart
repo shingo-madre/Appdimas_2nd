@@ -12,10 +12,9 @@ import 'package:gemastik_tryout/screens/splash/splash_screen.dart';
 import 'package:gemastik_tryout/screens/sign_up/sign_up_screen.dart';
 import 'package:gemastik_tryout/screens/verification_ktp/verification_ktp_screen.dart';
 import 'package:gemastik_tryout/screens/verification_wait/verification_wait_screen.dart';
+import 'package:gemastik_tryout/screens/join_event/join_event_screen.dart';
+import 'package:gemastik_tryout/screens/notification/notification_screen.dart';
 
-
-// We use name route
-// All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
   SignInScreen.routeName: (context) => SignInScreen(),
@@ -30,4 +29,6 @@ final Map<String, WidgetBuilder> routes = {
   DetailsScreen.routeName: (context) => DetailsScreen(),
   CartScreen.routeName: (context) => CartScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
+  JoinEventScreen.routeName: (context) => JoinEventScreen(),
+  NotificationScreen.routeName: (context) => NotificationScreen(),
 };

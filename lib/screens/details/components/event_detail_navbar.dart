@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/constants.dart';
+import 'package:gemastik_tryout/screens/join_event/join_event_screen.dart';
 
 class EventDetailNavBar extends StatelessWidget {
   const EventDetailNavBar({
@@ -40,7 +41,9 @@ class EventDetailNavBar extends StatelessWidget {
               ),
               child: Text('Mendaftar', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, JoinEventScreen.routeName);
+            },
           )
         ],
       )),
