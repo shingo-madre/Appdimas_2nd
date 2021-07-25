@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gemastik_tryout/constants.dart';
+import 'package:gemastik_tryout/screens/add_event/add_event_screen.dart';
 
 class MainMyEvent extends StatelessWidget {
   const MainMyEvent({ Key key }) : super(key: key);
@@ -24,14 +26,22 @@ class MainMyEvent extends StatelessWidget {
                           )
                         )
                       ),
-                      onPressed: () {},
-                      child: Text(
-                        'Tambah Acara Baru',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.grey[700],
-                        ),
-                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, AddEventScreen.routeName);
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.add, color: kPrimaryColor,),
+                          Text(
+                            'Tambah Acara Baru',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.grey[700],
+                            ),
+                          ),
+                        ],
+                      )
                     ),
                   ),
                   SizedBox(height: 20,),

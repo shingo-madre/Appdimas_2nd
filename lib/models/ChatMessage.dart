@@ -30,12 +30,6 @@ List demeChatMessages = [
     messageStatus: MessageStatus.viewed,
     isSender: true,
   ),
-  // ChatMessage(
-  //   text: "Ya opo seh",
-  //   messageType: ChatMessageType.text,
-  //   messageStatus: MessageStatus.not_sent,
-  //   isSender: true,
-  // ),
   ChatMessage(
     text: "Ya opo terusan",
     messageType: ChatMessageType.text,

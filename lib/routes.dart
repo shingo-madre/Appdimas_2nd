@@ -14,6 +14,7 @@ import 'package:gemastik_tryout/screens/notification/notification_screen.dart';
 import 'package:gemastik_tryout/screens/volunteer/volunteer_screen.dart';
 import 'package:gemastik_tryout/screens/chats/chats_screen.dart';
 import 'package:gemastik_tryout/screens/messages/message_screen.dart';
+import 'package:gemastik_tryout/screens/add_event/add_event_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
@@ -31,4 +32,5 @@ final Map<String, WidgetBuilder> routes = {
   VolunteerScreen.routeName: (context) => VolunteerScreen(),
   ChatsScreen.routeName: (context) => ChatsScreen(),
   MessagesScreen.routeName: (context) => MessagesScreen(),
+  AddEventScreen.routeName: (context) => AddEventScreen(),
 };
