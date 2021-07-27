@@ -60,7 +60,7 @@ List<Event> listEvents = [
     images: [
       "assets/images/gambar_event_3.png",
     ],
-    title: "Event Name",
+    title: "Relawan Bantu Kemiskinan",
     description: "Lorem qui enim sunt deserunt consequat ipsum pariatur commodo.",
     rating: 4.1,
     semua: true,
