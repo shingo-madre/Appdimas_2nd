@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/constants.dart';
+import 'package:gemastik_tryout/screens/information/information_screen.dart';
 import 'package:gemastik_tryout/screens/profile/profile_screen.dart';
 import 'package:gemastik_tryout/screens/sign_in/sign_in_screen.dart';
 import 'package:gemastik_tryout/size_config.dart';
@@ -51,6 +52,7 @@ class Sidebar extends StatelessWidget {
           leading: Icon(Icons.info_outline),
           onTap: () {
             Navigator.of(context).pop();
+            Navigator.of(context).pushNamed(InformationScreen.routeName);
           }
         ),
         SizedBox(height: getProportionateScreenHeight(220)),

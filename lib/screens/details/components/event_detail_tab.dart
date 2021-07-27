@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class EventDetailTab extends StatelessWidget {
   const EventDetailTab({ Key key }) : super(key: key);
@@ -71,7 +72,11 @@ class EventDetailTab extends StatelessWidget {
                     SizedBox(height: 10),
                     Row(
                       children: [
-                        Icon(Icons.bookmark, color: Colors.orange),
+                        SvgPicture.asset(
+                          "assets/icons/Tag.svg",
+                          height: 20,
+                          width: 20,
+                        ),
                         SizedBox(width: 10),
                         Text(
                           'Menjaga Stan Vaksinasi',

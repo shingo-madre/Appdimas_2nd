@@ -19,6 +19,7 @@ import 'package:gemastik_tryout/screens/details_event_admin/DetailsEventAdminScr
 import 'package:gemastik_tryout/screens/details_event_participant/DetailsEventParticipantScreen.dart';
 import 'package:gemastik_tryout/screens/accept_participant/accept_participant_screen.dart';
 import 'package:gemastik_tryout/screens/edit_event/edit_event_screen.dart';
+import 'package:gemastik_tryout/screens/information/information_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
@@ -41,4 +42,5 @@ final Map<String, WidgetBuilder> routes = {
   DetailsEventParticipantScreen.routeName: (context) => DetailsEventParticipantScreen(),
   AcceptParticipantScreen.routeName: (context) => AcceptParticipantScreen(),
   EditEventScreen.routeName: (context) => EditEventScreen(),
+  InformationScreen.routeName: (context) => InformationScreen(),
 };

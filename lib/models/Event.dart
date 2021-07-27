@@ -31,8 +31,8 @@ List<Event> listEvents = [
     id: 1,
     images: [
       "assets/images/gambar_event_1.png",
-      "assets/images/gambar_event_2.png",
-      "assets/images/gambar_event_3.png",
+      "assets/images/gambar_event_1.1.png",
+      "assets/images/gambar_event_1.2.png",
     ],
     title: "Relawan Kru Vaksinasi",
     description: "Jika anda seorang Dokter Umum, Perawat, Bidan, Analis, atau Rekam Medik silahkan daftarkan diri anda.",
@@ -40,6 +40,7 @@ List<Event> listEvents = [
     semua: true,
     acaraSaya: true,
     terdekat: true,
+    sedangBerjalan: true,
     jadwal: "2 Juli 2021"
   ),
   Event(
@@ -51,8 +52,8 @@ List<Event> listEvents = [
     description: "Semakin derasnya hujan yang turun belakangan ini, membuat beberapa lokasi di Kota Jakarta mengalami banjir hebat.",
     rating: 4.1,
     semua: true,
-    acaraSaya: true,
     populer: true,
+    sedangBerjalan: true,
     jadwal: "5 Agustus 2021"
   ),
   Event(

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/models/Event.dart';
-import 'package:gemastik_tryout/screens/accept_participant/accept_participant_screen.dart';
 import 'package:gemastik_tryout/screens/details/components/event_images.dart';
-import 'package:gemastik_tryout/screens/details/components/event_description.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatefulWidget {
   final Event event;
@@ -23,31 +22,59 @@ class _BodyState extends State<Body> {
       body: ListView(
         children: [
           EventImages(event: widget.event),
-          // ListTile(
-          //   contentPadding: EdgeInsets.symmetric(horizontal: 22),
-          //   leading: Icon(Icons.people_alt_outlined),
-          //   title: Text('2 participant want join'),
-          //   trailing: InkWell(
-          //     onTap: () {
-          //       Navigator.of(context, rootNavigator: true).pushNamed(
-          //         AcceptParticipantScreen.routeName,
-          //       );
-          //     },
-          //     child: Text('View'),
-          //   ),
-          // ),
+          ListTile(
+            contentPadding: EdgeInsets.symmetric(horizontal: 22),
+            leading: Icon(Icons.people_alt_outlined),
+            title: Row(
+              children: [
+                Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                ),
+                SizedBox(width: 5,),
+                Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                ),
+                SizedBox(width: 5,),
+                Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                ),
+                SizedBox(width: 5,),
+                Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                )
+              ],
+            )
+          ),
           Container(
             color: Colors.white,
             child: Column(
               children: [
-                EventDescription(
-                  event: widget.event,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
                 ListTile(
-                  leading: Icon(Icons.bookmark, color: Colors.orange),
+                  leading: SvgPicture.asset(
+                    "assets/icons/Tag.svg",
+                    height: 20,
+                    width: 20,
+                  ),
                   title: Text(
                     'Menjaga Stan Vaksinasi',
                     style: TextStyle(fontSize: 14),

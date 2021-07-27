@@ -33,6 +33,7 @@ class _EventImagesAdminState extends State<EventImagesAdmin> {
                   width: MediaQuery.of(context).size.width,
                   height: 300,
                   child: Carousel(
+                    dotColor: Colors.white,
                     dotSize: 4.0,
                     dotPosition: DotPosition.bottomRight,
                     dotBgColor: Colors.transparent,
