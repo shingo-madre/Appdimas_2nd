@@ -10,9 +10,10 @@ class ChatInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 70,
       padding: EdgeInsets.symmetric(
         horizontal: kDefaultPadding,
-        vertical: kDefaultPadding / 2,
+        // vertical: kDefaultPadding / 2,
       ),
       decoration: BoxDecoration(
         color: kPrimaryColor,
@@ -26,13 +27,13 @@ class ChatInputField extends StatelessWidget {
             SizedBox(width: kDefaultPadding),
             Expanded(
               child: Container(
+                height: 50,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Row(
                   children: [
-                    SizedBox(width: kDefaultPadding / 4),
                     Expanded(
                       child: TextField(
                         decoration: InputDecoration(
@@ -45,7 +46,6 @@ class ChatInputField extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: kDefaultPadding / 4),
                   ],
                 ),
               ),
