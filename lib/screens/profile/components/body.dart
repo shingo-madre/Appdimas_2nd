@@ -9,12 +9,12 @@ class Body extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 150,
+          height: 130,
           child: Stack(
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: 100,
+                height: 90,
                 color: kPrimaryColor,
               ),
               Positioned(
@@ -59,12 +59,12 @@ class Body extends StatelessWidget {
             child: Text(
               'zaire.levin@gmail.com',
               style: TextStyle(
-                color: Colors.black, fontSize: 18, fontWeight: FontWeight.w300
+                color: Colors.black, fontSize: 15, fontWeight: FontWeight.w300
               ),
             ),
           ),
         ),
-        Padding(padding: EdgeInsets.only(top: 10)),
+        Padding(padding: EdgeInsets.only(top: 5)),
         profileInfo(Icons.location_on_outlined, 'Nginden Intan Timur XVII No.1, Surabaya'),
         profileInfo(Icons.date_range_outlined, '12 Maret 2000'),
         profileInfo(Icons.phone, '+628312357'),
@@ -99,7 +99,6 @@ class Body extends StatelessWidget {
 
   Container profileInfo(leadingIcon, infoText) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 2.0),
       child: Column(
         children: <Widget>[
           Row(
@@ -130,7 +129,7 @@ class Body extends StatelessWidget {
           children: [
             ListTile(
               leading: Text(
-                'Event Name',
+                'Relawan Vaksinasi',
                 style: TextStyle(
                     fontSize: 18,
                     fontFamily:
