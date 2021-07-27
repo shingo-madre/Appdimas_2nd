@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gemastik_tryout/components/button_bottom_navbar.dart';
 import 'package:gemastik_tryout/models/Event.dart';
+import 'package:gemastik_tryout/screens/certificate/certificate_screen.dart';
 import 'package:gemastik_tryout/screens/details/components/event_images.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -31,36 +33,36 @@ class _BodyState extends State<Body> {
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                    color: Colors.grey[400],
                     borderRadius: BorderRadius.circular(20)
                   ),
+                  child: Image.asset('assets/images/profile_image_5.png'),
                 ),
-                SizedBox(width: 5,),
+                SizedBox(width: 3,),
                 Container(
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                    color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(20)
                   ),
+                  child: Image.asset('assets/images/profile_image_6.png'),
                 ),
-                SizedBox(width: 5,),
+                SizedBox(width: 3,),
                 Container(
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                    color: Colors.grey[400],
                     borderRadius: BorderRadius.circular(20)
                   ),
+                  child: Image.asset('assets/images/profile_image_7.png'),
                 ),
-                SizedBox(width: 5,),
+                SizedBox(width: 3,),
                 Container(
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                    color: Colors.grey[400],
                     borderRadius: BorderRadius.circular(20)
                   ),
+                  child: Image.asset('assets/images/profile_image_8.png'),
                 )
               ],
             )
@@ -84,7 +86,7 @@ class _BodyState extends State<Body> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: EdgeInsets.only(left: 20, bottom: 10),
             child: Text(
               'Progress',
               style: TextStyle(
@@ -163,6 +165,14 @@ class _BodyState extends State<Body> {
             checkColor: Colors.white,
           )
         ],
+      ),
+      bottomNavigationBar: ButtonBottomNavbar(
+        event: widget.event, 
+        buttonText: 'Ambil Sertifikat', 
+        alertMessage: 'Yakin Mengambil Sertifikat?',
+        press: () {
+          Navigator.of(context).pushNamed(CertificateScreen.routeName);
+        }
       ),
     );
   }

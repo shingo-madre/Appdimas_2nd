@@ -13,6 +13,23 @@ const kTextColor = Color(0xFFFF652C);
 const kDefaultPadding = 20.0;
 const kErrorColor = Color(0xFFF03738);
 const kContentColorLightTheme = Color(0xFF1D1D35);
+const kHeaderText = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.bold,
+  fontSize: 20,
+  fontFamily: 'Montserrat Regular'
+);
+const kSubHeaderText = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.bold,
+  fontSize: 16,
+  fontFamily: 'Montserrat Regular'
+);
+const kParagraphText = TextStyle(
+  color: Colors.black,
+  fontSize: 14,
+  fontFamily: 'Montserrat Regular'
+);
 
 const kAnimationDuration = Duration(milliseconds: 200);
 

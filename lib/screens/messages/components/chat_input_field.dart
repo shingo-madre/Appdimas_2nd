@@ -23,7 +23,7 @@ class ChatInputField extends StatelessWidget {
           children: [
             Icon(Icons.add, color: Colors.white),
             SizedBox(width: kDefaultPadding),
-            Icon(Icons.camera_alt_outlined, color: Colors.white,),
+            Icon(Icons.photo_library_outlined, color: Colors.white,),
             SizedBox(width: kDefaultPadding),
             Expanded(
               child: Container(

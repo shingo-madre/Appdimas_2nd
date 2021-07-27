@@ -6,10 +6,12 @@ class ShowAlertDialog extends StatelessWidget {
     Key key,
     @required this.context,
     @required this.alertMessage,
+    @required this.press,
   }) : super(key: key);
 
   final BuildContext context;
   final String alertMessage;
+  final Function press;
 
   @override
   Widget build(context) {
@@ -65,9 +67,7 @@ class ShowAlertDialog extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
+                  onTap: press,
                   child: Container(
                     width: 150,
                     padding: EdgeInsets.only(top: 20.0, bottom: 20.0),

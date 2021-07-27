@@ -30,7 +30,7 @@ class Message extends StatelessWidget {
         children: [
           if (!message.isSender) ...[
             CircleAvatar(
-              radius: 12,
+              radius: 20,
               backgroundImage: AssetImage("assets/images/profile_image_1.png"),
             ),
             SizedBox(width: kDefaultPadding / 2),

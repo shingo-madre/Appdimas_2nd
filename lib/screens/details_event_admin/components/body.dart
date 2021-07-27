@@ -4,6 +4,7 @@ import 'package:gemastik_tryout/models/Event.dart';
 import 'package:gemastik_tryout/screens/accept_participant/accept_participant_screen.dart';
 import 'package:gemastik_tryout/screens/details/components/event_description.dart';
 import 'package:gemastik_tryout/screens/details_event_admin/components/event_images_admin.dart';
+import 'package:gemastik_tryout/screens/home/home_screen.dart';
 
 class Body extends StatefulWidget {
   const Body({Key key, @required this.event}) : super(key: key);
@@ -154,7 +155,9 @@ class _BodyState extends State<Body> {
           )
         ],
       ),
-      bottomNavigationBar: ButtonBottomNavbar(event: widget.event,),
+      bottomNavigationBar: ButtonBottomNavbar(event: widget.event, alertMessage: 'Ingin Mulai Acara?', buttonText: 'Mulai Acara', press: () {
+        Navigator.of(context).pushNamed(HomeScreen.routeName);
+      },),
     );
   }
 }

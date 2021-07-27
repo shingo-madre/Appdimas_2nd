@@ -19,9 +19,6 @@ class MessagesScreen extends StatelessWidget {
       title: Row(
         children: [
           BackButton(),
-          CircleAvatar(
-            backgroundImage: AssetImage("assets/images/profile_image_1.png"),
-          ),
           SizedBox(width: kDefaultPadding * 0.75),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

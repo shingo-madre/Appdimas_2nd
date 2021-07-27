@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "376172346717",
+    "project_id": "nulungi-app",
+    "storage_bucket": "nulungi-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376172346717:android:5ab3991adcebfafd0e3cb4",
+        "android_client_info": {
+          "package_name": "com.chatting.gemastik_tryout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376172346717-kbkifhf5srrcfsi6kfdtmcp4iaito85f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chatting.gemastik_tryout",
+            "certificate_hash": "cdc78129aa69a9b37202270f4589506ac3d8d683"
+          }
+        },
+        {
+          "client_id": "376172346717-d622l2nrfapqnft8489pffb9r3kgi6lk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQpQMYYPKF24bwVPRBbLejZsxzfLg3HIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376172346717-d622l2nrfapqnft8489pffb9r3kgi6lk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
