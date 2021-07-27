@@ -51,8 +51,8 @@ class MainMyEvent extends StatelessWidget {
                         ...List.generate(
                           listEvents.length,
                           (index) {
-                            if (listEvents[index].isPopular)
-                              return EventCard(event: listEvents[index]);
+                            if (listEvents[index].acaraSaya)
+                              return EventCard(event: listEvents[index], role: 'admin',);
 
                             return SizedBox.shrink(); 
                           },

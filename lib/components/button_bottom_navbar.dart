@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gemastik_tryout/components/alert_dialog.dart';
 import 'package:gemastik_tryout/constants.dart';
 import 'package:gemastik_tryout/models/Event.dart';
 
@@ -29,7 +30,12 @@ class ButtonBottomNavbar extends StatelessWidget {
                 child: Text('Mulai Acara', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
               ),
               onTap: () {
-                showAlertDialog(context);
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return ShowAlertDialog(context: context, alertMessage: 'Ingin Mulai Acara?',);
+                  },
+                );
               },
             )
           ],
@@ -38,75 +44,67 @@ class ButtonBottomNavbar extends StatelessWidget {
     );
   }
 
-  showAlertDialog(BuildContext context) {
-    // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      backgroundColor: Colors.grey[200],
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
-      content: Container(
-        height: 100,
-        child: Column(
-          children: [
-            Text("Ingin Memulai Acara?"),
-            Padding(padding: EdgeInsets.only(top: 40)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
-                        color: Colors.white,
-                      ),
-                      child: Text(
-                        'Tidak',
-                        style: TextStyle(
-                          color: Colors.grey
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ), 
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
-                        color: Colors.orange,
-                      ),
-                      child: Text(
-                        'Ya',
-                        style: TextStyle(
-                          color: Colors.white
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            )
-          ],
-        ),
-      )
-    );
-
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
-    );
-  }
+  // AlertDialog showAlertDialog(BuildContext context) {
+  //   // set up the AlertDialog
+  //   return AlertDialog(
+  //     backgroundColor: Colors.grey[200],
+  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
+  //     content: Container(
+  //       height: 100,
+  //       child: Column(
+  //         children: [
+  //           Text("Ingin Memulai Acara?"),
+  //           Padding(padding: EdgeInsets.only(top: 40)),
+  //           Row(
+  //             mainAxisAlignment: MainAxisAlignment.spaceAround,
+  //             children: [
+  //               Expanded(
+  //                 child: InkWell(
+  //                   onTap: () {
+  //                     Navigator.pop(context);
+  //                   },
+  //                   child: Container(
+  //                     height: 35,
+  //                     decoration: BoxDecoration(
+  //                       borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
+  //                       color: Colors.white,
+  //                     ),
+  //                     child: Text(
+  //                       'Tidak',
+  //                       style: TextStyle(
+  //                         color: Colors.grey
+  //                       ),
+  //                       textAlign: TextAlign.center,
+  //                     ),
+  //                   ),
+  //                 ), 
+  //               ),
+  //               Expanded(
+  //                 child: InkWell(
+  //                   onTap: () {
+  //                     Navigator.pop(context);
+  //                   },
+  //                   child: Container(
+  //                     height: 35,
+  //                     decoration: BoxDecoration(
+  //                       borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
+  //                       color: Colors.orange,
+  //                     ),
+  //                     child: Text(
+  //                       'Ya',
+  //                       style: TextStyle(
+  //                         color: Colors.white
+  //                       ),
+  //                       textAlign: TextAlign.center,
+  //                     ),
+  //                   ),
+  //                 ),
+  //               ),
+  //             ],
+  //           )
+  //         ],
+  //       ),
+  //     )
+  //   );
+  // }
 }

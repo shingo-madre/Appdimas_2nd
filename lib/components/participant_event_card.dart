@@ -20,7 +20,7 @@ class EventCard extends StatelessWidget {
       child: InkWell(
         onTap: () => Navigator.of(context, rootNavigator: true).pushNamed(
           DetailsEventAdminScreen.routeName,
-          arguments: EventDetailsArguments(event: event)
+          arguments: EventDetailsAdminArguments(event: event)
         ),
         child: Card(
           color: Color(0xffF0F0F0),

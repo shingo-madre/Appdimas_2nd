@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/models/Event.dart';
 import 'package:gemastik_tryout/screens/details_event_admin/DetailsEventAdminScreen.dart';
+import 'package:gemastik_tryout/screens/details_event_participant/DetailsEventParticipantScreen.dart';
 
 class EventCard extends StatelessWidget {
   const EventCard({
@@ -8,20 +9,31 @@ class EventCard extends StatelessWidget {
     this.width = 140,
     this.aspectRetio = 1.02,
     @required this.event,
+    @required this.role,
   }) : super(key: key);
 
   final double width, aspectRetio;
   final Event event;
+  final String role;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(bottom: 10),
       child: InkWell(
-        onTap: () => Navigator.of(context, rootNavigator: true).pushNamed(
-          DetailsEventAdminScreen.routeName,
-          arguments: EventDetailsArguments(event: event)
-        ),
+        onTap: () 
+        {
+          role == 'admin' ?
+          Navigator.of(context, rootNavigator: true).pushNamed(
+            DetailsEventAdminScreen.routeName,
+            arguments: EventDetailsAdminArguments(event: event)
+          )
+          :
+          Navigator.of(context, rootNavigator: true).pushNamed(
+            DetailsEventParticipantScreen.routeName,
+            arguments: EventDetailsParticipantArguments(event: event)
+          );
+        },
         child: Card(
           color: Color(0xffF0F0F0),
           shape: RoundedRectangleBorder(

@@ -8,7 +8,7 @@ class DetailsEventParticipantScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final EventDetailsArguments agrs = ModalRoute.of(context).settings.arguments;
+    final EventDetailsParticipantArguments agrs = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       backgroundColor: Color(0xFFF5F6F9),
       body: Body(event: agrs.event),
@@ -16,8 +16,8 @@ class DetailsEventParticipantScreen extends StatelessWidget {
   }
 }
 
-class EventDetailsArguments {
+class EventDetailsParticipantArguments {
   final Event event;
 
-  EventDetailsArguments({@required this.event});
+  EventDetailsParticipantArguments({@required this.event});
 }

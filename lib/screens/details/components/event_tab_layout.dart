@@ -54,9 +54,10 @@ class _EventTabLayoutState extends State<EventTabLayout> {
             Expanded(
               child: TabBarView(
                 children: [
-                  ListEventAll(),
-                  ListEventAll(),
-                  ListEventAll(),
+                  ListEventAll(tabSelected: 'semua',),
+                  ListEventAll(tabSelected: 'terbaru'),
+                  ListEventAll(tabSelected: 'populer'),
+                  ListEventAll(tabSelected: 'terdekat'),
                 ],
               ),
             ),

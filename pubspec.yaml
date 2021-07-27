@@ -32,6 +32,7 @@ dependencies:
   flutter_svg: ^0.19.1 # help us to use SVG in our app
   provider: ^4.3.1 # for State management
   image_picker: ^0.6.7+7
+  carousel_pro: ^1.0.0
 
 dev_dependencies:
   flutter_test:

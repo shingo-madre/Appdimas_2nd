@@ -53,10 +53,10 @@ class _ListEventState extends State<ListEvent> {
           Expanded(
             child: TabBarView(
               children: [
-                ListEventAll(),
-                ListEventAll(),
-                ListEventAll(),
-                ListEventAll(),
+                ListEventAll(tabSelected: 'semua',),
+                ListEventAll(tabSelected: 'terbaru',),
+                ListEventAll(tabSelected: 'populer'),
+                ListEventAll(tabSelected: 'terdekat'),
               ],
             ),
           ),

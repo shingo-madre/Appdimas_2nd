@@ -1,7 +1,7 @@
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/models/Event.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gemastik_tryout/screens/accept_participant/accept_participant_screen.dart';
 import 'package:gemastik_tryout/screens/edit_event/edit_event_screen.dart';
 
 import '../../../size_config.dart';
@@ -29,9 +29,19 @@ class _EventImagesAdminState extends State<EventImagesAdmin> {
             padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(0)),
             child: Stack(
               children: [
-                Hero(
-                  tag: widget.event.id.toString(),
-                  child: Image.asset(widget.event.images[selectedImage]),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 300,
+                  child: Carousel(
+                    dotSize: 4.0,
+                    dotPosition: DotPosition.bottomRight,
+                    dotBgColor: Colors.transparent,
+                    images: widget.event.images.map((item) => Hero(
+                      tag: widget.event.id.toString(),
+                      child: Image.asset(item, fit: BoxFit.cover,),
+                      
+                    )).toList()
+                  ),
                 ),
                 Row(
                   children: [
