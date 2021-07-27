@@ -30,7 +30,7 @@ class ChatInputField extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(30),
                 ),
                 child: Row(
                   children: [
