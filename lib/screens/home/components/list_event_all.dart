@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gemastik_tryout/components/event_card.dart';
+import 'package:gemastik_tryout/components/main_event_card.dart';
 import 'package:gemastik_tryout/models/Event.dart';
 
 class ListEventAll extends StatefulWidget {
@@ -21,7 +21,7 @@ class _ListEventAllState extends State<ListEventAll> {
               listEvents.length,
               (index) {
                 if (listEvents[index].isPopular)
-                  return EventCard(event: listEvents[index]);
+                  return MainEventCard(event: listEvents[index]);
 
                 return SizedBox.shrink(); 
               },

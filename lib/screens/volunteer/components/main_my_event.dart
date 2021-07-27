@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gemastik_tryout/components/event_card.dart';
 import 'package:gemastik_tryout/constants.dart';
 import 'package:gemastik_tryout/screens/add_event/add_event_screen.dart';
+import 'package:gemastik_tryout/models/Event.dart';
 
 class MainMyEvent extends StatelessWidget {
   const MainMyEvent({ Key key }) : super(key: key);
@@ -16,7 +18,7 @@ class MainMyEvent extends StatelessWidget {
               child: ListView(
                 children: [ 
                   Container(
-                    height: 50,
+                    height: 60,
                     child: TextButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(Color(0xffF0F0F0)),
@@ -26,13 +28,11 @@ class MainMyEvent extends StatelessWidget {
                           )
                         )
                       ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, AddEventScreen.routeName);
-                      },
+                      onPressed: () => Navigator.of(context, rootNavigator: true).push(MaterialPageRoute(builder: (_)=> AddEventScreen())),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.add, color: kPrimaryColor,),
+                          Icon(Icons.add_circle_outline_outlined, color: kPrimaryColor,),
                           Text(
                             'Tambah Acara Baru',
                             style: TextStyle(
@@ -45,84 +45,21 @@ class MainMyEvent extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20,),
-                  Container(
-                    child: Card(
-                      color: Color(0xffF0F0F0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(17.0),
-                      ),
-                      elevation: 0,
-                      child: Column(
-                        children: [
-                          ListTile(
-                            leading: Text(
-                              'Event Name',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontFamily:
-                                      'Montserrat SemiBold'),
-                            ),
-                            trailing: Text(
-                              'Progress',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontFamily: 'Montserrat SemiBold',
-                                  color: Color(0xffFF591C)),
-                            ),
-                          ),
-                          ListTile(
-                            leading: Container(
-                              height: 59,
-                              width: 59,
-                              child: Card(
-                                color: Color(0xffD4D4D4),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(10.0),
-                                ),
-                              ),
-                            ),
-                            title: RichText(
-                              text: TextSpan(
-                                children: [
-                                  WidgetSpan(
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(bottom: 4),
-                                      child: Icon(
-                                        Icons.location_on,
-                                        size: 20,
-                                        color: Colors.deepOrange,
-                                      ),
-                                    ),
-                                  ),
-                                  WidgetSpan(
-                                    child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(
-                                                bottom: 4),
-                                        child: Text('Keputih Hitam',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontFamily:
-                                                    'Montserrat Medium'))),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            subtitle: Text(
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit amet morbi arcu.',
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: 'Montserrat Regular'),
-                            ),
-                            contentPadding: EdgeInsets.only(
-                                bottom: 20, left: 15, right: 15),
-                          ),
-                        ],
-                      )
+                  SingleChildScrollView(
+                    child: Column(
+                      children: <Widget>[
+                        ...List.generate(
+                          listEvents.length,
+                          (index) {
+                            if (listEvents[index].isPopular)
+                              return EventCard(event: listEvents[index]);
+
+                            return SizedBox.shrink(); 
+                          },
+                        ),
+                      ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

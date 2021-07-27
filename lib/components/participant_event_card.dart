@@ -39,11 +39,11 @@ class EventCard extends StatelessWidget {
                           'Montserrat SemiBold'),
                 ),
                 trailing: Text(
-                  'Progress',
+                  '13 - 14 Juli',
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 15,
                       fontFamily: 'Montserrat SemiBold',
-                      color: Color(0xffFF591C)),
+                      color: Color(0xff990303)),
                 ),
               ),
               ListTile(
@@ -91,10 +91,7 @@ class EventCard extends StatelessWidget {
                   ),
                 ),
                 subtitle: Text(
-                  event.description,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  softWrap: false,
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit amet morbi arcu.',
                   style: TextStyle(
                       fontSize: 12,
                       fontFamily: 'Montserrat Regular'),
