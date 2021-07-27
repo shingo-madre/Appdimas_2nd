@@ -20,7 +20,7 @@ class MessagesScreen extends StatelessWidget {
         children: [
           BackButton(),
           CircleAvatar(
-            backgroundImage: AssetImage("assets/images/Profile Image.png"),
+            backgroundImage: AssetImage("assets/images/profile_image_1.png"),
           ),
           SizedBox(width: kDefaultPadding * 0.75),
           Column(

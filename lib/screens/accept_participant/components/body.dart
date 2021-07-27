@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
             children: [
               ListTile(
                 contentPadding: EdgeInsets.only(top: 20, left: 20),
-                leading: Image.asset('assets/images/Profile Image.png'),
+                leading: Image.asset('assets/images/profile_image_1.png'),
                 title: Text(
                   'Davis Vaccaro',
                   style: TextStyle(

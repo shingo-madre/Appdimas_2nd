@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/constants.dart';
 import 'package:gemastik_tryout/screens/profile/profile_screen.dart';
+import 'package:gemastik_tryout/screens/sign_in/sign_in_screen.dart';
 import 'package:gemastik_tryout/size_config.dart';
 
 class Sidebar extends StatelessWidget {
@@ -21,7 +22,7 @@ class Sidebar extends StatelessWidget {
           accountEmail: Text('zaire.levin@gmail.com'),
           currentAccountPicture: CircleAvatar(
             backgroundColor: Colors.white,
-            child: Image.asset("assets/images/Profile Image.png",),
+            child: Image.asset("assets/images/profile_image_1.png",),
           ),
         ),
         ListTile(
@@ -43,7 +44,6 @@ class Sidebar extends StatelessWidget {
           leading: Icon(Icons.settings),
           onTap: () {
             Navigator.of(context).pop();
-            Navigator.of(context).pushNamed('/transaction');
           }
         ),
         ListTile(
@@ -51,7 +51,6 @@ class Sidebar extends StatelessWidget {
           leading: Icon(Icons.info_outline),
           onTap: () {
             Navigator.of(context).pop();
-            Navigator.of(context).pushNamed('/transaction');
           }
         ),
         SizedBox(height: getProportionateScreenHeight(220)),
@@ -64,7 +63,7 @@ class Sidebar extends StatelessWidget {
           title: Text('Keluar', style: TextStyle(color: kSecondaryColor,)),
           onTap: () {
             Navigator.of(context).pop();
-            Navigator.of(context).pushNamed('/transaction');
+            Navigator.of(context).pushNamed(SignInScreen.routeName);
           }
         ),
       ],

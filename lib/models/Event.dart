@@ -34,17 +34,12 @@ List<Event> listEvents = [
       "assets/images/gambar_event_2.png",
       "assets/images/gambar_event_3.png",
     ],
-    // colors: [
-    //   Color(0xFFF6625E),
-    //   Color(0xFF836DB8),
-    //   Color(0xFFDECB9C),
-    //   Colors.white,
-    // ],
     title: "Relawan Kru Vaksinasi",
     description: "Jika anda seorang Dokter Umum, Perawat, Bidan, Analis, atau Rekam Medik silahkan daftarkan diri anda.",
     rating: 4.8,
     semua: true,
     acaraSaya: true,
+    terdekat: true,
     jadwal: "2 Juli 2021"
   ),
   Event(
@@ -52,17 +47,12 @@ List<Event> listEvents = [
     images: [
       "assets/images/gambar_event_2.png",
     ],
-    // colors: [
-    //   Color(0xFFF6625E),
-    //   Color(0xFF836DB8),
-    //   Color(0xFFDECB9C),
-    //   Colors.white,
-    // ],
     title: "Gerakan Peduli Banjir",    
     description: "Semakin derasnya hujan yang turun belakangan ini, membuat beberapa lokasi di Kota Jakarta mengalami banjir hebat.",
     rating: 4.1,
     semua: true,
     acaraSaya: true,
+    populer: true,
     jadwal: "5 Agustus 2021"
   ),
   Event(
@@ -70,17 +60,70 @@ List<Event> listEvents = [
     images: [
       "assets/images/gambar_event_3.png",
     ],
-    // colors: [
-    //   Color(0xFFF6625E),
-    //   Color(0xFF836DB8),
-    //   Color(0xFFDECB9C),
-    //   Colors.white,
-    // ],
     title: "Event Name",
     description: "Lorem qui enim sunt deserunt consequat ipsum pariatur commodo.",
     rating: 4.1,
     semua: true,
     sedangBerjalan: true,
+    terbaru: true,
     jadwal: "30 Desember 2021"
+  ),
+  Event(
+    id: 4,
+    images: [
+      "assets/images/gambar_event_4.png",
+      "assets/images/gambar_event_2.png",
+      "assets/images/gambar_event_3.png",
+    ],
+    title: "Relawan Banjir Surabaya",
+    description: "Lorem qui enim sunt deserunt consequat ipsum pariatur commodo.Aliquip ut eiusmod amet anim quis eu cillum anim quis et consectetur nisi do.",
+    rating: 4.8,
+    semua: true,
+    acaraSaya: true,
+    terdekat: true,
+    terbaru: true,
+    jadwal: "2 Juli 2021"
+  ),
+  Event(
+    id: 5,
+    images: [
+      "assets/images/gambar_event_5.png",
+      "assets/images/gambar_event_2.png",
+      "assets/images/gambar_event_3.png",
+    ],
+    title: "Relawan Perbaikan Jalan",
+    description: "Ut consequat sint esse occaecat labore dolore non elit veniam consectetur cillum laboris anim nisi.",
+    rating: 4.8,
+    semua: true,
+    acaraSaya: true,
+    jadwal: "2 Juli 2021"
+  ),
+  Event(
+    id: 6,
+    images: [
+      "assets/images/gambar_event_6.png",
+      "assets/images/gambar_event_2.png",
+      "assets/images/gambar_event_3.png",
+    ],
+    title: "Pembangunan Jembatan Roboh",
+    description: "Qui quis dolor eiusmod non.Ex officia magna mollit tempor amet elit tempor incididunt id ea sunt consequat culpa dolor.",
+    rating: 4.8,
+    semua: true,
+    terbaru: true,
+    jadwal: "2 Juli 2021"
+  ),
+  Event(
+    id: 7,
+    images: [
+      "assets/images/gambar_event_7.png",
+      "assets/images/gambar_event_2.png",
+      "assets/images/gambar_event_3.png",
+    ],
+    title: "Bersih-Bersih Kali",
+    description: "Deserunt duis velit reprehenderit sit labore ad cupidatat do.Sint est excepteur excepteur magna ea laboris cillum aliquip officia culpa.",
+    rating: 4.8,
+    semua: true,
+    populer: true,
+    jadwal: "2 Juli 2021"
   ),
 ];

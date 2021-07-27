@@ -102,7 +102,7 @@ class EventDetailTab extends StatelessWidget {
                         Container(
                           width: 40,
                           height: 40,
-                          child: Image.asset('assets/images/Profile Image.png'),
+                          child: Image.asset('assets/images/profile_image_1.png'),
                         ),
                         SizedBox(width: 10),
                         Text(
