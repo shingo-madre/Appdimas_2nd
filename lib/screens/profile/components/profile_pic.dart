@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gemastik_tryout/constants.dart';
 
 class ProfilePic extends StatelessWidget {
@@ -15,7 +14,6 @@ class ProfilePic extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         clipBehavior: Clip.none,
-        // overflow: Overflow.visible,
         children: [
           CircleAvatar(
             backgroundImage: AssetImage("assets/images/Profile Image.png"),

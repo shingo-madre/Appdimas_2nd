@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/components/coustom_bottom_nav_bar.dart';
 import 'package:gemastik_tryout/components/sidebar.dart';
 import 'package:gemastik_tryout/enums.dart';
-import 'package:gemastik_tryout/screens/home/components/list_event.dart';
+import 'package:gemastik_tryout/screens/home/components/main_list_event.dart';
 
 import 'home_header.dart';
 
@@ -16,22 +16,7 @@ class Body extends StatelessWidget {
       drawer: Drawer(
         child: Sidebar(),
       ),
-      body: ListEvent(),
-      // body: SafeArea(
-      //   child: SingleChildScrollView(
-      //     child: Column(
-      //       children: [
-      //         ListEvent(),
-      //         // DiscountBanner(),
-      //         // Categories(),
-      //         // SpecialOffers(),
-      //         // SizedBox(height: getProportionateScreenWidth(30)),
-      //         PopularProducts(),
-      //         SizedBox(height: getProportionateScreenWidth(30)),
-      //       ],
-      //     ),
-      //   ),
-      // ),
+      body: MainListEvent(),
       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }

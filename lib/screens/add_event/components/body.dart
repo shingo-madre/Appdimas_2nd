@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gemastik_tryout/components/default_button.dart';
 import 'package:gemastik_tryout/screens/add_event/components/add_event_form.dart';
 import 'package:gemastik_tryout/size_config.dart';
-
-import '../../../constants.dart';
 
 class Body extends StatefulWidget {
   @override

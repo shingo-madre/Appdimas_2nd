@@ -35,7 +35,9 @@ class EventDescription extends StatelessWidget {
           ),
           child: Text(
             event.description,
-            maxLines: 3,
+            style: TextStyle(
+              color: Colors.black
+            ),
           ),
         ),
       ],
