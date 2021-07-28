@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/constants.dart';
 
@@ -8,6 +9,7 @@ class ProfilePic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
     return SizedBox(
       height: 100,
       width: 100,
@@ -16,7 +18,8 @@ class ProfilePic extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage("assets/images/profile_image_1.png"),
+            // backgroundImage: ,
+            // backgroundImage: NetworkImage(user.photoURL),
           ),
           Positioned(
             right: -12,

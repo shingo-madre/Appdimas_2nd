@@ -53,7 +53,6 @@ List<Event> listEvents = [
     rating: 4.1,
     semua: true,
     populer: true,
-    sedangBerjalan: true,
     jadwal: "5 Agustus 2021"
   ),
   Event(

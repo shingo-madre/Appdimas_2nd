@@ -6,6 +6,7 @@ import 'package:gemastik_tryout/screens/information/information_screen.dart';
 import 'package:gemastik_tryout/screens/profile/profile_screen.dart';
 import 'package:gemastik_tryout/screens/settings/setting_screen.dart';
 import 'package:gemastik_tryout/screens/sign_in/sign_in_screen.dart';
+import 'package:gemastik_tryout/services/auth.dart';
 import 'package:provider/provider.dart';
 
 class Sidebar extends StatelessWidget {
@@ -13,6 +14,7 @@ class Sidebar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AuthService _auth =  AuthService();
     final user = FirebaseAuth.instance.currentUser;
     return Column(
       children: <Widget>[
@@ -21,13 +23,17 @@ class Sidebar extends StatelessWidget {
             color: kPrimaryColor,
           ),
           accountName: Text(
-            user.displayName,
+            'alla',
+            // user.displayName,
             style: TextStyle(fontWeight: FontWeight.w900),
           ),
-          accountEmail: Text(user.email),
+          accountEmail: Text(
+            'alalal'
+            // user.email
+          ),
           currentAccountPicture: CircleAvatar(
             backgroundColor: Colors.white,
-            backgroundImage: NetworkImage(user.photoURL),
+            // backgroundImage: NetworkImage(user.photoURL),
           ),
         ),
         Expanded(
@@ -73,9 +79,10 @@ class Sidebar extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.keyboard_arrow_left_sharp),
           title: Text('Keluar', style: TextStyle(color: kSecondaryColor,)),
-          onTap: () {
-            final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
-            provider.logout();
+          onTap: () async {
+            // final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
+            // provider.logout();
+            await _auth.signOut();
             Navigator.of(context).pushNamed(SignInScreen.routeName);
           }
         ),

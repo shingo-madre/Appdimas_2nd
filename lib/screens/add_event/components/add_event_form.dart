@@ -20,6 +20,15 @@ class _AddEventFormState extends State<AddEventForm> {
   int _countTask = 0;
   int _countRequirement = 0;
 
+  final TextEditingController eventNameController = TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
+  final TextEditingController locationController = TextEditingController();
+  final TextEditingController startDateController = TextEditingController();
+  final TextEditingController endDateController = TextEditingController();
+  final TextEditingController purposeController = TextEditingController();
+  final TextEditingController taskController = TextEditingController();
+  final TextEditingController requirementController = TextEditingController();
+
   Future<void> _pickImage(ImageSource source) async {
     File selected = await ImagePicker.pickImage(source: source);
 

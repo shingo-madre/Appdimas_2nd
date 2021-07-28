@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/components/default_button.dart';
 import 'package:gemastik_tryout/components/form_error.dart';
 import 'package:gemastik_tryout/screens/complete_profile/complete_profile_screen.dart';
+import 'package:gemastik_tryout/services/auth.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -19,7 +20,9 @@ class _SignUpFormState extends State<SignUpForm> {
   String password;
   String conformPassword;
   bool remember = false;
+  bool loading = false;
   final List<String> errors = [];
+  final AuthService _auth = AuthService();
 
   void addError({String error}) {
     if (!errors.contains(error))
@@ -37,7 +40,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
+    return loading ? CircularProgressIndicator() : Form(
       key: _formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,10 +88,17 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(height: getProportionateScreenHeight(40)),
           DefaultButton(
             text: "Register",
-            press: () {
+            press: () async{
               if (_formKey.currentState.validate()) {
+                setState(() { loading = true; });
                 _formKey.currentState.save();
-                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
+                dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+                if(result == null) {
+                  print('error');
+                  loading = false;
+                } else {
+                  Navigator.of(context).pushNamed(CompleteProfileScreen.routeName);
+                }
               }
             },
           ),
@@ -136,7 +146,9 @@ class _SignUpFormState extends State<SignUpForm> {
         } else if (value.length >= 8) {
           removeError(error: kShortPassError);
         }
-        password = value;
+        setState(() {
+          password = value;                
+        });
       },
       validator: (value) {
         if (value.isEmpty) {
@@ -188,7 +200,9 @@ class _SignUpFormState extends State<SignUpForm> {
         } else if (emailValidatorRegExp.hasMatch(value)) {
           removeError(error: kInvalidEmailError);
         }
-        return null;
+        setState(() {
+          email = value;                
+        });
       },
       validator: (value) {
         if (value.isEmpty) {

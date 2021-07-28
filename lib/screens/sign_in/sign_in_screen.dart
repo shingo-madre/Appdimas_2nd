@@ -8,13 +8,19 @@ import 'components/body.dart';
 
 class SignInScreen extends StatelessWidget {
   static String routeName = "/sign_in";
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     body: Body(),
+  //   );
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ChangeNotifierProvider(
         create: (context) => GoogleSignInProvider(),
         child: StreamBuilder(
-          stream: FirebaseAuth.instance.authStateChanges(),
+          stream: FirebaseAuth.instance.onAuthStateChanged,
           builder: (context, snapshot) {
             final provider = Provider.of<GoogleSignInProvider>(context);
             if(provider.isSigningIn) {

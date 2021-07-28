@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/components/default_button.dart';
 import 'package:gemastik_tryout/components/form_error.dart';
+import 'package:gemastik_tryout/screens/home/home_screen.dart';
 import 'package:gemastik_tryout/screens/verification_ktp/verification_ktp_screen.dart';
 
 import '../../../constants.dart';
@@ -118,7 +119,9 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
                       borderRadius: BorderRadius.circular(15),
                     )),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(HomeScreen.routeName);
+                  },
                   child: Text(
                     'Lewati',
                     style: TextStyle(

@@ -34,13 +34,23 @@ dependencies:
   image_picker: ^0.6.7+7
   carousel_pro: ^1.0.0
   #firebase and google sign in
-  firebase_auth: ^0.18.3
   google_sign_in: ^4.5.6
-  firebase_core : ^0.5.0
+  firebase_auth: ^0.14.0+5
+  cloud_firestore: ^0.13.0+1
+  firebase_core: ^0.4.2+1
+  
 
 dev_dependencies:
+  # flutter_launcher_icons: ^0.9.1
   flutter_test:
     sdk: flutter
+
+# flutter_icons:
+#   android: true
+#   ios: true
+#   image_path: "assets/images/logo_nulungi.png"
+#   adaptive_icon_background: "#ffffff"
+#   adaptive_icon_foreground: "assets/images/logo_nulungi.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/constants.dart';
 
@@ -6,6 +7,7 @@ import 'profile_pic.dart';
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
     return Column(
       children: [
         Container(
@@ -36,7 +38,8 @@ class Body extends StatelessWidget {
         ListTile(
           visualDensity: VisualDensity(horizontal: 0, vertical: -4),
           leading: Text(
-            'Zaire Levin',
+            // user.displayName,
+            'alal',
             style: TextStyle(
                 fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
           ),
@@ -57,7 +60,8 @@ class Body extends StatelessWidget {
           child: Align(
             alignment: Alignment.topLeft,
             child: Text(
-              'zaire.levin@gmail.com',
+              // user.email,
+              'lalal',
               style: TextStyle(
                 color: Colors.black, fontSize: 15, fontWeight: FontWeight.w300
               ),
