@@ -5,11 +5,13 @@ import 'package:gemastik_tryout/constants.dart';
 class ProfilePic extends StatelessWidget {
   const ProfilePic({
     Key key,
+    @required this.photoURL
   }) : super(key: key);
 
+  final String photoURL;
+  
   @override
   Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser;
     return SizedBox(
       height: 100,
       width: 100,
@@ -18,8 +20,8 @@ class ProfilePic extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           CircleAvatar(
-            // backgroundImage: ,
-            // backgroundImage: NetworkImage(user.photoURL),
+            backgroundColor: Colors.white,
+            backgroundImage: photoURL.isNotEmpty ? NetworkImage(photoURL) : null,
           ),
           Positioned(
             right: -12,

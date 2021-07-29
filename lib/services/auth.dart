@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:gemastik_tryout/models/User.dart';
+import 'package:gemastik_tryout/services/database.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -38,10 +39,13 @@ class AuthService {
   }
 
   // register pake email & password
-  Future registerWithEmailAndPassword(String email, String password) async{
+  Future registerWithEmailAndPassword(String email, String password, String username) async{
     try{
       AuthResult result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = result.user;
+
+      //buat document 
+      await DatabaseService(uid: user.uid).updateUserData(username);
       return _userFromFirebaseUser(user);
     }catch(e){
       print(e.toString());
@@ -57,5 +61,11 @@ class AuthService {
       print(e.toString());
       return null;
     }
+  }
+
+  //get user
+  Future getUser() async {
+    var firebaseUser = await FirebaseAuth.instance.currentUser();
+    return firebaseUser;
   }
 }

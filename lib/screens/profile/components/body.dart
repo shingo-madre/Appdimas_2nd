@@ -4,10 +4,34 @@ import 'package:gemastik_tryout/constants.dart';
 
 import 'profile_pic.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  String displayName = '';
+  String email = '';
+  String photoURL = '';
+  
+  Future getUser () async {
+    var firebaseUser = await FirebaseAuth.instance.currentUser();
+    setState(() {
+      email = firebaseUser.email;
+      if(firebaseUser.isEmailVerified == true) {
+        displayName = firebaseUser.displayName;
+        photoURL = firebaseUser.photoUrl;
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getUser();
+  }
   @override
   Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser;
     return Column(
       children: [
         Container(
@@ -22,7 +46,7 @@ class Body extends StatelessWidget {
               Positioned(
                 top: 30,
                 left: 20,
-                child: ProfilePic(),
+                child: ProfilePic(photoURL: photoURL,),
               ),
               Positioned(
                 top: 60,
@@ -38,18 +62,17 @@ class Body extends StatelessWidget {
         ListTile(
           visualDensity: VisualDensity(horizontal: 0, vertical: -4),
           leading: Text(
-            // user.displayName,
-            'alal',
+            displayName,
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
+                fontWeight: FontWeight.bold, fontSize: 18, color: Colors.black),
           ),
-          title: Padding(
-            padding: EdgeInsets.only(top: 5),
-            child: Text(
-              'Mahasiswa',
-              style: TextStyle(color: Colors.grey, fontSize: 15),
-            ),
-          ),
+          // title: Padding(
+          //   padding: EdgeInsets.only(top: 5),
+          //   child: Text(
+          //     'Mahasiswa',
+          //     style: TextStyle(color: Colors.grey, fontSize: 15),
+          //   ),
+          // ),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [Icon(Icons.star), Text('4,7')],
@@ -60,8 +83,7 @@ class Body extends StatelessWidget {
           child: Align(
             alignment: Alignment.topLeft,
             child: Text(
-              // user.email,
-              'lalal',
+              email,
               style: TextStyle(
                 color: Colors.black, fontSize: 15, fontWeight: FontWeight.w300
               ),

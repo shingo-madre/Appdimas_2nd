@@ -19,21 +19,22 @@ class _AddEventFormState extends State<AddEventForm> {
   bool date2Filled = false;
   int _countTask = 0;
   int _countRequirement = 0;
-
-  final TextEditingController eventNameController = TextEditingController();
-  final TextEditingController descriptionController = TextEditingController();
-  final TextEditingController locationController = TextEditingController();
-  final TextEditingController startDateController = TextEditingController();
-  final TextEditingController endDateController = TextEditingController();
-  final TextEditingController purposeController = TextEditingController();
-  final TextEditingController taskController = TextEditingController();
-  final TextEditingController requirementController = TextEditingController();
+  String eventName; 
+  File eventPhoto;
+  String eventDescription; 
+  String eventLocation; 
+  DateTime eventStartDate; 
+  DateTime eventEndDate; 
+  String eventPurpose; 
+  String eventTask; 
+  String eventRequirement;
 
   Future<void> _pickImage(ImageSource source) async {
     File selected = await ImagePicker.pickImage(source: source);
 
     setState(() {
       _lampiran = selected;
+      eventPhoto = selected;
     });
   }
 
@@ -42,22 +43,38 @@ class _AddEventFormState extends State<AddEventForm> {
 
   Future<void> _selectDate(BuildContext context, whichDate) async {
     final DateTime picked = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(1945, 8),
-        lastDate: DateTime(2101));
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1945, 8),
+      lastDate: DateTime(2101));
     if (picked != null && picked != selectedDate1 && whichDate == '1') {
       setState(() {
         selectedDate1 = picked;
+        eventStartDate = picked;
         date1Filled = true;
       });
     } else {
       setState(() {
         selectedDate2 = picked;
+        eventEndDate = picked;
         date2Filled = true;
       });
     }
   }
+
+  // Future uploadFile() async {    
+  //   StorageReference storageReference = FirebaseStorage.instance    
+  //       .ref()    
+  //       .child('chats/${Path.basename(_image.path)}}');    
+  //   StorageUploadTask uploadTask = storageReference.putFile(_image);    
+  //   await uploadTask.onComplete;    
+  //   print('File Uploaded');    
+  //   storageReference.getDownloadURL().then((fileURL) {    
+  //     setState(() {    
+  //       _uploadedFileURL = fileURL;    
+  //     });    
+  //   });    
+  // }  
 
   void addNewForm(String whichForm) {
     setState(() {
@@ -82,7 +99,7 @@ class _AddEventFormState extends State<AddEventForm> {
         children: [
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Isi Nama Acara'),
-          buildFormField('event_name', 'Masukkan Nama Acara',TextInputType.text),
+          buildFormField(eventName, 'Masukkan Nama Acara',TextInputType.text),
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Foto atau Poster'),
           InkWell(
@@ -106,10 +123,10 @@ class _AddEventFormState extends State<AddEventForm> {
           ),
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Deskripsi'),
-          buildFormField('description','Masukkan Deskripsi Acara',TextInputType.text),
+          buildFormField(eventDescription,'Masukkan Deskripsi Acara',TextInputType.text),
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Lokasi'),
-          buildFormField('locations','Masukkan Lokasi Acara',TextInputType.text),
+          buildFormField(eventLocation,'Masukkan Lokasi Acara',TextInputType.text),
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Durasi'),
           Row(
@@ -126,7 +143,7 @@ class _AddEventFormState extends State<AddEventForm> {
               height: getProportionateScreenHeight(10)),
           formFieldTitle('Tujuan'),
           buildFormField(
-              'purpose',
+              eventPurpose,
               'Tujuan Acara',
               TextInputType.text),
           // FormError(errors: errors),
@@ -187,10 +204,13 @@ class _AddEventFormState extends State<AddEventForm> {
       keyboardType: inputType,
       onSaved: (newValue) => fieldValue = newValue,
       onChanged: (value) {
-        if (value.isNotEmpty) {
-          // removeError(error: kNullError);
-        }
-        return null;
+        setState(() {
+          value = fieldValue;
+        });
+        // if (value.isNotEmpty) {
+        //   // removeError(error: kNullError);
+        // }
+        // return null;
       },
       validator: (value) {
         if (value.isEmpty) {
@@ -246,10 +266,11 @@ class _NewFormFieldState extends State<NewFormField> {
         keyboardType: TextInputType.text,
         onSaved: (newValue) => fieldValue = newValue,
         onChanged: (value) {
-          if (value.isNotEmpty) {
-            // removeError(error: kNullError);
-          }
-          return null;
+
+          // if (value.isNotEmpty) {
+          //   // removeError(error: kNullError);
+          // }
+          // return null;
         },
         validator: (value) {
           if (value.isEmpty) {

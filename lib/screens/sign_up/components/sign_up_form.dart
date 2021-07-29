@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/components/default_button.dart';
 import 'package:gemastik_tryout/components/form_error.dart';
+import 'package:gemastik_tryout/models/User.dart';
 import 'package:gemastik_tryout/screens/complete_profile/complete_profile_screen.dart';
 import 'package:gemastik_tryout/services/auth.dart';
 
@@ -92,7 +93,7 @@ class _SignUpFormState extends State<SignUpForm> {
               if (_formKey.currentState.validate()) {
                 setState(() { loading = true; });
                 _formKey.currentState.save();
-                dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+                dynamic result = await _auth.registerWithEmailAndPassword(email, password, username);
                 if(result == null) {
                   print('error');
                   loading = false;
@@ -174,7 +175,9 @@ class _SignUpFormState extends State<SignUpForm> {
         if (value.isNotEmpty) {
           removeError(error: kUsernameNullError);
         } 
-        return null;
+        setState(() {
+          username = value;                
+        });
       },
       validator: (value) {
         if (value.isEmpty) {
