@@ -1,15 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/constants.dart';
-import 'package:gemastik_tryout/models/User.dart';
-import 'package:gemastik_tryout/provider/google_sign_in.dart';
 import 'package:gemastik_tryout/screens/information/information_screen.dart';
 import 'package:gemastik_tryout/screens/profile/profile_screen.dart';
 import 'package:gemastik_tryout/screens/settings/setting_screen.dart';
 import 'package:gemastik_tryout/screens/sign_in/sign_in_screen.dart';
 import 'package:gemastik_tryout/services/auth.dart';
-import 'package:provider/provider.dart';
 
 class Sidebar extends StatefulWidget {
   const Sidebar({Key key}) : super(key: key);

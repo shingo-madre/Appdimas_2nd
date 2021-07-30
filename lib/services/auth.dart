@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 import 'package:gemastik_tryout/models/User.dart';
 import 'package:gemastik_tryout/services/database.dart';
 
@@ -67,5 +66,18 @@ class AuthService {
   Future getUser() async {
     var firebaseUser = await FirebaseAuth.instance.currentUser();
     return firebaseUser;
+  }
+
+  //add event
+  Future addEvent(String eventName, String eventDescription, String eventPurpose) async{
+    try{
+      //buat document 
+      var user = await FirebaseAuth.instance.currentUser();
+      await DatabaseService(uid: user.uid).addEvent(eventName, eventDescription, eventPurpose);
+      return user;
+    }catch(e){
+      print(e.toString());
+      return null;
+    }
   }
 }

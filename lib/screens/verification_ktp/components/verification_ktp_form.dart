@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/components/default_button.dart';
+import 'package:gemastik_tryout/screens/home/home_screen.dart';
 import 'package:gemastik_tryout/screens/verification_wait/verification_wait_screen.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -92,7 +93,9 @@ class _VerificationKtpFormState extends State<VerificationKtpForm> {
                       borderRadius: BorderRadius.circular(15)),),
                     backgroundColor: MaterialStateProperty.all(Colors.grey), 
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(HomeScreen.routeName);
+                  },
                   child: Text(
                     'Lewati',
                     style: TextStyle(

@@ -72,8 +72,6 @@ List<Event> listEvents = [
     id: 4,
     images: [
       "assets/images/gambar_event_4.png",
-      "assets/images/gambar_event_2.png",
-      "assets/images/gambar_event_3.png",
     ],
     title: "Relawan Banjir Surabaya",
     description: "Lorem qui enim sunt deserunt consequat ipsum pariatur commodo.Aliquip ut eiusmod amet anim quis eu cillum anim quis et consectetur nisi do.",
@@ -88,8 +86,6 @@ List<Event> listEvents = [
     id: 5,
     images: [
       "assets/images/gambar_event_5.png",
-      "assets/images/gambar_event_2.png",
-      "assets/images/gambar_event_3.png",
     ],
     title: "Relawan Perbaikan Jalan",
     description: "Ut consequat sint esse occaecat labore dolore non elit veniam consectetur cillum laboris anim nisi.",
@@ -102,8 +98,6 @@ List<Event> listEvents = [
     id: 6,
     images: [
       "assets/images/gambar_event_6.png",
-      "assets/images/gambar_event_2.png",
-      "assets/images/gambar_event_3.png",
     ],
     title: "Pembangunan Jembatan Roboh",
     description: "Qui quis dolor eiusmod non.Ex officia magna mollit tempor amet elit tempor incididunt id ea sunt consequat culpa dolor.",
@@ -116,8 +110,6 @@ List<Event> listEvents = [
     id: 7,
     images: [
       "assets/images/gambar_event_7.png",
-      "assets/images/gambar_event_2.png",
-      "assets/images/gambar_event_3.png",
     ],
     title: "Bersih-Bersih Kali",
     description: "Deserunt duis velit reprehenderit sit labore ad cupidatat do.Sint est excepteur excepteur magna ea laboris cillum aliquip officia culpa.",

@@ -37,20 +37,21 @@ dependencies:
   google_sign_in: ^4.5.6
   firebase_auth: ^0.14.0+5
   cloud_firestore: ^0.13.0+1
+  firebase_storage: ^3.1.6
   firebase_core: ^0.4.2+1
   
 
 dev_dependencies:
-  # flutter_launcher_icons: ^0.9.1
+  flutter_launcher_icons: 
   flutter_test:
     sdk: flutter
 
-# flutter_icons:
-#   android: true
-#   ios: true
-#   image_path: "assets/images/logo_nulungi.png"
-#   adaptive_icon_background: "#ffffff"
-#   adaptive_icon_foreground: "assets/images/logo_nulungi.png"
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon_launcher.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/images/icon_launcher.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

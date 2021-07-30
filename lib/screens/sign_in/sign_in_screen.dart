@@ -8,12 +8,6 @@ import 'components/body.dart';
 
 class SignInScreen extends StatelessWidget {
   static String routeName = "/sign_in";
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     body: Body(),
-  //   );
-  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +17,8 @@ class SignInScreen extends StatelessWidget {
           stream: FirebaseAuth.instance.onAuthStateChanged,
           builder: (context, snapshot) {
             final provider = Provider.of<GoogleSignInProvider>(context);
-            if(provider.isSigningIn) {
-              return buildLoading();
+            if(provider.isSigningIn == true) {
+              return CircularProgressIndicator();
             } else if (snapshot.hasData) {
               return HomeScreen();
             } else {
@@ -35,6 +29,4 @@ class SignInScreen extends StatelessWidget {
       ),
     );
   }
-
-  Widget buildLoading() => Center(child: CircularProgressIndicator());
 }

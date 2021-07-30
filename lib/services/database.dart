@@ -14,6 +14,14 @@ class DatabaseService {
     });
   }
 
+  Future addEvent(String eventName, String eventDescription, String eventPurpose) async {
+    return await eventCollection.document(uid).setData({
+      'eventName' : eventName,
+      'eventDescription' : eventDescription,
+      'eventPurpose' : eventPurpose
+    });
+  } 
+
   Future createEvent(
     String eventName, 
     String eventDescription, 

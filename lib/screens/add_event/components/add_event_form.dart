@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gemastik_tryout/components/default_button.dart';
 import 'package:gemastik_tryout/constants.dart';
 import 'package:gemastik_tryout/screens/volunteer/volunteer_screen.dart';
+import 'package:gemastik_tryout/services/auth.dart';
 import 'package:gemastik_tryout/size_config.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -14,9 +15,10 @@ class AddEventForm extends StatefulWidget {
 
 class _AddEventFormState extends State<AddEventForm> {
   final _formKey = GlobalKey<FormState>();
-  File _lampiran;
   bool date1Filled = false;
   bool date2Filled = false;
+  DateTime selectedDate1 = DateTime.now();
+  DateTime selectedDate2 = DateTime.now();
   int _countTask = 0;
   int _countRequirement = 0;
   String eventName; 
@@ -28,18 +30,16 @@ class _AddEventFormState extends State<AddEventForm> {
   String eventPurpose; 
   String eventTask; 
   String eventRequirement;
+  final AuthService _auth = AuthService();
 
   Future<void> _pickImage(ImageSource source) async {
     File selected = await ImagePicker.pickImage(source: source);
 
     setState(() {
-      _lampiran = selected;
+      // _lampiran = selected;
       eventPhoto = selected;
     });
   }
-
-  DateTime selectedDate1 = DateTime.now();
-  DateTime selectedDate2 = DateTime.now();
 
   Future<void> _selectDate(BuildContext context, whichDate) async {
     final DateTime picked = await showDatePicker(
@@ -61,20 +61,6 @@ class _AddEventFormState extends State<AddEventForm> {
       });
     }
   }
-
-  // Future uploadFile() async {    
-  //   StorageReference storageReference = FirebaseStorage.instance    
-  //       .ref()    
-  //       .child('chats/${Path.basename(_image.path)}}');    
-  //   StorageUploadTask uploadTask = storageReference.putFile(_image);    
-  //   await uploadTask.onComplete;    
-  //   print('File Uploaded');    
-  //   storageReference.getDownloadURL().then((fileURL) {    
-  //     setState(() {    
-  //       _uploadedFileURL = fileURL;    
-  //     });    
-  //   });    
-  // }  
 
   void addNewForm(String whichForm) {
     setState(() {
@@ -99,7 +85,27 @@ class _AddEventFormState extends State<AddEventForm> {
         children: [
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Isi Nama Acara'),
-          buildFormField(eventName, 'Masukkan Nama Acara',TextInputType.text),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            onSaved: (newValue) => eventName = newValue,
+            onChanged: (value) {
+              setState(() {
+                eventName = value;
+              });
+            },
+            validator: (value) {
+              if (value.isEmpty) {
+                // addError(error: fieldValue + ' ' + kNullError);
+                return "";
+              }
+              return null;
+            },
+            decoration: InputDecoration(
+              hintText: 'Masukkan Nama Acara',
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+            ),
+          ),
+          // buildFormField(eventName, 'Masukkan Nama Acara',TextInputType.text),
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Foto atau Poster'),
           InkWell(
@@ -113,8 +119,8 @@ class _AddEventFormState extends State<AddEventForm> {
                   color: Color(0xffE5E5E5),
                 ),
                 child: Center(
-                  child: _lampiran != null
-                      ? Image.file(_lampiran)
+                  child: eventPhoto != null
+                      ? Image.file(eventPhoto)
                       : Icon(
                           Icons.add_circle_outline_outlined, color: kPrimaryColor, size: 30,
                         ),
@@ -123,10 +129,50 @@ class _AddEventFormState extends State<AddEventForm> {
           ),
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Deskripsi'),
-          buildFormField(eventDescription,'Masukkan Deskripsi Acara',TextInputType.text),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            onSaved: (newValue) => eventDescription = newValue,
+            onChanged: (value) {
+              setState(() {
+                eventDescription = value;
+              });
+            },
+            validator: (value) {
+              if (value.isEmpty) {
+                // addError(error: fieldValue + ' ' + kNullError);
+                return "";
+              }
+              return null;
+            },
+            decoration: InputDecoration(
+              hintText: 'Masukkan Nama Acara',
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+            ),
+          ),
+          // buildFormField(eventDescription,'Masukkan Deskripsi Acara',TextInputType.text),
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Lokasi'),
-          buildFormField(eventLocation,'Masukkan Lokasi Acara',TextInputType.text),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            onSaved: (newValue) => eventLocation = newValue,
+            onChanged: (value) {
+              setState(() {
+                eventLocation = value;
+              });
+            },
+            validator: (value) {
+              if (value.isEmpty) {
+                // addError(error: fieldValue + ' ' + kNullError);
+                return "";
+              }
+              return null;
+            },
+            decoration: InputDecoration(
+              hintText: 'Masukkan Nama Acara',
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+            ),
+          ),
+          // buildFormField(eventLocation,'Masukkan Lokasi Acara',TextInputType.text),
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Durasi'),
           Row(
@@ -142,10 +188,27 @@ class _AddEventFormState extends State<AddEventForm> {
           SizedBox(
               height: getProportionateScreenHeight(10)),
           formFieldTitle('Tujuan'),
-          buildFormField(
-              eventPurpose,
-              'Tujuan Acara',
-              TextInputType.text),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            onSaved: (newValue) => eventPurpose = newValue,
+            onChanged: (value) {
+              setState(() {
+                eventPurpose = value;
+              });
+            },
+            validator: (value) {
+              if (value.isEmpty) {
+                // addError(error: fieldValue + ' ' + kNullError);
+                return "";
+              }
+              return null;
+            },
+            decoration: InputDecoration(
+              hintText: 'Masukkan Nama Acara',
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+            ),
+          ),
+          // buildFormField(eventPurpose,'Tujuan Acara',TextInputType.text),
           // FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(10)),
           formFieldTitle('Tugas'),
@@ -175,8 +238,14 @@ class _AddEventFormState extends State<AddEventForm> {
               Expanded(
                 child: DefaultButton(
                   text: "Unggah Acara",
-                  press: () {
-                    Navigator.pushNamed(context, VolunteerScreen.routeName);
+                  press: () async {
+                    dynamic result = await _auth.addEvent(eventName, eventDescription,eventPurpose);
+                    if(result == null) {
+                      print('error');
+                    } else {
+                      Navigator.of(context).pushNamed(VolunteerScreen.routeName);
+                    }
+                    // Navigator.pushNamed(context, VolunteerScreen.routeName);
                     // if (_formKey.currentState
                     //     .validate()) {
                     // }
@@ -205,7 +274,7 @@ class _AddEventFormState extends State<AddEventForm> {
       onSaved: (newValue) => fieldValue = newValue,
       onChanged: (value) {
         setState(() {
-          value = fieldValue;
+          fieldValue = value;
         });
         // if (value.isNotEmpty) {
         //   // removeError(error: kNullError);
